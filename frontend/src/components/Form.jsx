@@ -4,6 +4,7 @@ import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/form.css"
+import LoadingIndicator from "./loadingIndicator";
 // import React from 'react'
  // eslint-disable-next-line react/prop-types
  const Form = ({route, method}) => {
@@ -50,6 +51,7 @@ import "../styles/form.css"
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
       />
+    {loading && <LoadingIndicator/> }
       <button className="form-button" type="submit">
         {name}
       </button>
